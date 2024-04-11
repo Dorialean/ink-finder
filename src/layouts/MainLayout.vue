@@ -65,10 +65,10 @@
     <q-footer bordered class="bg-secondary text-white">
       <q-toolbar>
         <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
+          <q-avatar class="q-mt-sm">
+            <img src="public/favicon.ico" />
           </q-avatar>
-          <div>Title</div>
+          <div>InkFinder</div>
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>
