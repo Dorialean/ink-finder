@@ -1,6 +1,7 @@
 <template>
   <q-page class="row justify-evenly">
-    <div class="row q-mt-xl">
+    <p>Последние работы:</p>
+    <div class="row q-mt-lg">
       <template v-for="definition in inkFinderDefinitions" :key="definition">
         <q-card dark bordered class="col q-mx-sm bg-primary">
           <q-img :src="`https://random.imagecdn.app/500/200`" />

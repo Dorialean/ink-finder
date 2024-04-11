@@ -29,7 +29,12 @@
       <q-scroll-area class="fit">
         <q-list>
           <template v-for="(menuItem, index) in menuList" :key="index">
-            <q-item clickable :active="menuItem.label === 'Outbox'" v-ripple>
+            <q-item
+              :to="menuItem.route"
+              clickable
+              :active="menuItem.label === 'Outbox'"
+              v-ripple
+            >
               <q-item-section avatar>
                 <q-icon :name="menuItem.icon" />
               </q-item-section>
@@ -81,37 +86,50 @@ const menuList = [
     icon: 'account_circle',
     label: 'Личный кабинет',
     separator: false,
+    route: '/cabinet',
   },
   {
     icon: 'inbox',
     label: 'Анкеты',
     separator: false,
+    route: '/order',
   },
   {
     icon: 'send',
     label: 'Чаты',
     separator: false,
+    route: '/chat',
+  },
+  {
+    icon: 'person_search',
+    label: 'Специалисты',
+    separator: false,
+    route: '/profs',
   },
   {
     icon: 'color_lens',
     label: 'Татуировки',
     separator: true,
+    route: '/tatoo',
   },
   {
     icon: 'settings',
     label: 'Настройки',
     separator: false,
+    route: '/settings',
   },
   {
     icon: 'feedback',
     label: 'Отправить Feedback',
     separator: false,
+    route: '/feedback',
   },
   {
     icon: 'help',
     iconColor: 'primary',
     label: 'Помощь',
     separator: false,
+    route: '/help',
   },
 ];
 
