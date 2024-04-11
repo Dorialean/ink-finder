@@ -9,4 +9,16 @@ export const useUserStore = defineStore('user', {
       user: {} as User,
     };
   },
+  getters: {
+    getAccessToken: (state) => state.accessToken,
+    getRefreshToken: (state) => state.refreshToken,
+    getUser: (state) => state.user,
+  },
+  actions: {
+    setTokens(accessToken: string, refreshToken: string) {
+      this.accessToken = accessToken;
+      this.refreshToken = refreshToken;
+    },
+    //TODO: добавить setеры для всех полей пользователя
+  },
 });

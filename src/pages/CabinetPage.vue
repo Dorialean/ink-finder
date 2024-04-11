@@ -19,11 +19,16 @@ import { ref } from 'vue';
 import { useUserService } from 'src/services/api/useUserService';
 import { useUserStore } from 'src/stores/useUserStore';
 
+const userStore = useUserStore();
 const email = ref<string>('');
 const password = ref<string>('');
 
 function register(email: string, password: string) {
-  useUserService.registerUser(email, password);
+  const { accessToken, refreshToken } = useUserService.registerUser(
+    email,
+    password
+  );
+  userStore.setTokens(accessToken, refreshToken);
 }
 </script>
 
