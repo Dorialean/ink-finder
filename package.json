@@ -14,7 +14,10 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.16.4",
+    "@vueuse/core": "^10.9.0",
+    "dotenv": "^16.4.5",
     "moment": "^2.30.1",
+    "pinia": "^2.1.7",
     "quasar": "^2.8.0",
     "vue": "^3.4.18",
     "vue-router": "^4.0.12"
