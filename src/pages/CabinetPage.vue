@@ -1,35 +1,19 @@
 <template>
   <q-page>
-    <div>
-      <q-input v-model="email" label="Почта" filled type="email" hint="Почта" />
-      <q-input
-        v-model="password"
-        label="Пароль"
-        filled
-        type="password"
-        hint="Пароль"
-      />
-      <q-btn label="Войти" @click="register(email, password)" />
-    </div>
+    <authorize-component v-if="!isAuthorized" />
+    <div v-else>Личный кабинет</div>
   </q-page>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useUserService } from 'src/services/api/useUserService';
 import { useUserStore } from 'src/stores/useUserStore';
+import AuthorizeComponent from 'src/components/AuthorizeComponent.vue';
 
 const userStore = useUserStore();
-const email = ref<string>('');
-const password = ref<string>('');
-
-function register(email: string, password: string) {
-  const { accessToken, refreshToken } = useUserService.registerUser(
-    email,
-    password
-  );
-  userStore.setTokens(accessToken, refreshToken);
-}
+const isAuthorized = ref<boolean>(
+  !!userStore.accessToken && !!userStore.refreshToken
+);
 </script>
 
 <style scoped></style>

@@ -19,6 +19,8 @@ export const useUserStore = defineStore('user', {
       this.accessToken = accessToken;
       this.refreshToken = refreshToken;
     },
-    //TODO: добавить setеры для всех полей пользователя
+    setUser(user: User) {
+      this.user = user;
+    },
   },
 });

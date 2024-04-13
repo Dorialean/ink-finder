@@ -1,13 +1,17 @@
-import { useFetch } from '@vueuse/core';
-import { useHttpClient } from '../useHttpClient';
+import { useFetch, UseFetchReturn } from '@vueuse/core';
+import { Token } from 'src/models/Token';
 
-function registerUser(email: string, password: string): any {
-  return useFetch(process.env.VITE_SERVER_PATH + '/register')
+async function registerUser(
+  email: string,
+  password: string
+): Promise<UseFetchReturn<Token>> {
+  const token = await useFetch(process.env.VITE_SERVER_PATH + '/register')
     .post({
       email: email,
       password: password,
     })
-    .json();
+    .json<Token>();
+  return token;
 }
 
 export const useUserService = {
