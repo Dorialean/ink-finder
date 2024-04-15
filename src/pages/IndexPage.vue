@@ -25,7 +25,7 @@
     <div class="row q-mb-sm">
       <template v-for="definition in inkFinderDefinitions" :key="definition">
         <q-card dark bordered class="col q-mx-sm bg-primary">
-          <q-img :src="`https://random.imagecdn.app/500/200`" />
+          <q-img :src="definition.path" />
           <q-card-section>
             <div class="text-h6">{{ definition.title }}</div>
             <div class="text-subtitle2">{{ definition.subtitle }}</div>
@@ -48,31 +48,42 @@ const inkFinderDefinitions = [
     title: 'Магические символы',
     subtitle: 'Выполнено Алина Петрова',
     text: 'Эта татуировка принесла мне удачу и защиту от злых сил!',
+    path: new URL('../assets/img/magic_symbols_tatoo.jpeg', import.meta.url)
+      .href,
   },
   {
     title: 'Реалистичный портрет',
     subtitle: 'Выполнено Иван Иванов',
     text: 'Очень доволен работой мастера, портрет выглядит как живой!',
+    path: new URL('../assets/img/realistic_face_tatoo.jpeg', import.meta.url)
+      .href,
   },
   {
     title: 'Графический рисунок',
     subtitle: 'Выполнено Елена Сидорова',
     text: 'Эта татуировка выглядит очень стильно и современно, все друзья в восторге!',
+    path: new URL('../assets/img/graphical_tatoo.jpeg', import.meta.url).href,
   },
   {
     title: 'Фэнтезийный ландшафт',
     subtitle: 'Выполнено Денис Кузнецов',
     text: 'Смотреть на эту татуировку как на картину, так много деталей и оттенков!',
+    path: new URL(
+      '../assets/img/graphical_lanshaft_tatoo.jpeg',
+      import.meta.url
+    ).href,
   },
   {
     title: 'Цветочный узор',
     subtitle: 'Выполнено Ольга Смирнова',
     text: 'Такая нежная и красивая татуировка, добавила моей коже эстетики и женственности!',
+    path: new URL('../assets/img/flowerfull_tatoo.jpeg', import.meta.url).href,
   },
   {
     title: 'Трибал',
     subtitle: 'Выполнено Артем Белов',
     text: 'Этот тату обладает особой энергией и силой, мне кажется, что он даже мой характер отразил!',
+    path: new URL('../assets/img/tribal_tatoo.jpeg', import.meta.url).href,
   },
 ];
 const timelineEvents = [

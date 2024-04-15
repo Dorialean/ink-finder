@@ -28,12 +28,13 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useUserService } from 'src/services/api/useUserService';
 
 const email = ref<string>('');
 const password = ref<string>('');
 
-const login = async (email: string, passowrd: string) => {
-  console.log(email, passowrd);
+const login = async (email: string, password: string) => {
+  useUserService.login(email, password);
 };
 </script>
 

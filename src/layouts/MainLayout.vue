@@ -66,7 +66,7 @@
       <q-toolbar>
         <q-toolbar-title>
           <q-avatar class="q-mt-sm">
-            <img src="public/favicon.ico" />
+            <img src="/favicon.ico" />
           </q-avatar>
           <div>InkFinder</div>
         </q-toolbar-title>
