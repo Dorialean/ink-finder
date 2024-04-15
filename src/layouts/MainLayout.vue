@@ -14,14 +14,7 @@
           />
         </q-toolbar-title>
 
-        <q-btn
-          v-if="false"
-          dense
-          flat
-          round
-          icon="menu"
-          @click="toggleRightDrawer"
-        />
+        <q-btn dense flat round icon="menu" @click="toggleRightDrawer" />
       </q-toolbar>
     </q-header>
 
@@ -48,13 +41,7 @@
       </q-scroll-area>
     </q-drawer>
 
-    <q-drawer
-      v-if="false"
-      show-if-above
-      v-model="rightDrawerOpen"
-      side="right"
-      bordered
-    >
+    <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
       <!-- drawer content -->
     </q-drawer>
 
