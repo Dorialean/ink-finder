@@ -40,32 +40,32 @@ const isDialog = ref<boolean>(false);
 const messages = [
   {
     createdAt: moment().subtract(5, 'minutes').format(),
-    author: 'Person 1',
+    author: 'Я',
     text: 'Привет, как прошел твой сеанс татуирования?',
   },
   {
     createdAt: moment().subtract(3, 'minutes').format(),
-    author: 'Person 2',
+    author: 'Эрон Херс',
     text: 'Привет, все прошло отлично! Моя новая татуировка - это объект с полями createdAt, author и text.',
   },
   {
     createdAt: moment().subtract(2, 'minutes').format(),
-    author: 'Person 1',
+    author: 'Я',
     text: 'Звучит интересно, какой автор у твоей татуировки?',
   },
   {
     createdAt: moment().subtract(1, 'minutes').format(),
-    author: 'Person 2',
+    author: 'Эрон Херс',
     text: 'Автор - мой любимый татуировщик из студии "Ink Master".',
   },
   {
     createdAt: moment().format(),
-    author: 'Person 1',
+    author: 'Я',
     text: 'Понятно, это звучит круто! Надеюсь, у тебя все зажило хорошо.',
   },
   {
     createdAt: moment().add(1, 'minutes').format(),
-    author: 'Person 2',
+    author: 'Эрон Херс',
     text: 'Спасибо, да, все зажило отлично. Теперь у меня уникальная татуировка, созданная в JavaScript стиле.',
   },
 ];

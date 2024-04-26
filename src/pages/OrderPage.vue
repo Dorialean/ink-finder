@@ -18,12 +18,14 @@
 import { ref } from 'vue';
 import OrderComponent from 'src/components/OrderComponent.vue';
 import { Order } from 'src/models/Order';
+import { useOrderService } from 'src/services/api/useOrderService';
 
 const defaultOrder: Order = {
   id: crypto.randomUUID(),
   title: 'Анкета',
   description: 'Описание анкеты',
 };
+
 const orders = ref<Order[]>([
   {
     id: '7fb01838-cfd7-4598-b237-7bc8a3577751',
@@ -36,6 +38,7 @@ const orders = ref<Order[]>([
     description: 'Хочу очень классный эскиз',
   },
 ]);
+useOrderService.updateOrders(orders.value);
 
 const createOrder = () => orders.value.unshift(defaultOrder);
 const updateOrder = (order: Order) => {
