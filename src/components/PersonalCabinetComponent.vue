@@ -8,6 +8,10 @@
       <span>Телефон: {{ user?.phone }}</span>
       <span>День рождения: {{ user?.birthday }}</span>
     </q-card-section>
+    <q-card-actions>
+      <q-btn label="Изменить данные" color="primary" />
+      <q-btn label="Удалить аккаунт" color="negative" />
+    </q-card-actions>
   </q-card>
 </template>
 

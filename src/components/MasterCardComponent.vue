@@ -1,14 +1,17 @@
 <template>
   <q-card class="q-pa-md">
-    <img
-      v-if="photoPath"
-      class="text-center"
-      :src="photoPath"
-      style="max-width: 100%; max-height: 200px"
-    />
-
     <q-card-section>
       <div class="q-gutter-md text-h6 text-center">{{ fullName }}</div>
+      <div class="text-center">
+        <q-avatar rounded size="100px">
+          <img
+            v-if="photoPath"
+            class="text-center"
+            :src="getImageUrl(photoPath).toString()"
+            style="max-width: 100%; max-height: 200px"
+          />
+        </q-avatar>
+      </div>
       <div class="q-mt-md text-center">{{ comment }}</div>
       <div class="row">
         <q-chip
@@ -38,6 +41,10 @@ const props = defineProps<{
 
 const rating = props.rating ?? 0;
 const specializations = props.specializations ?? [];
+
+function getImageUrl(fileName: string) {
+  return new URL(`../assets/img/professionals/${fileName}`, import.meta.url);
+}
 </script>
 
 <style lang="scss">

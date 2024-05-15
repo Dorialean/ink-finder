@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page class="q-ma-sm">
     <q-input v-model="email" label="Почта" filled type="email" hint="Почта" />
     <q-input
       v-model="password"
